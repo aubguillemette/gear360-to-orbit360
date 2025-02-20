@@ -23,14 +23,14 @@ I really like the Gear 360 too, but I wasn't satisfied with the options availabl
 The ORBIT360 inserts some metadata in the MP4 files it generates. If this data is absent from the file, the stitching software refuses to open the file.
 
 This script copies the folloing atom keys and their original values from a source ORBIT360 file into the Gear 360 file:
-- moov/udta/©fmt: Contains the string "JK Imaging Ltd."
-- moov/udta/©inf: Contains the string "KODAK PIXPRO ORBIT 360 4K"
-- moov/udta/m cm: Not quite sure what this is used for
-- moov/udta/m vr: Not quite sure what this is used for
-- moov/udta/SNum: Seems to contain the serial number of the camera on which the source video was taken
-- moov/udta/rads: Not quite sure what it does, but if this key is ommited, the software only shows video from one lens
+- ```moov/udta/©fmt```: Contains the string "JK Imaging Ltd."
+- ```moov/udta/©inf```: Contains the string "KODAK PIXPRO ORBIT 360 4K"
+- ```moov/udta/m cm```: Not quite sure what this is used for
+- ```moov/udta/m vr```: Not quite sure what this is used for
+- ```moov/udta/SNum```: Seems to contain the serial number of the camera on which the source video was taken
+- ```moov/udta/rads```: Not quite sure what it does, but if this key is ommited, the software only shows video from one lens
 
 ## Thanks
-[MP4 Inspector](https://sourceforge.net/projects/mp4-inspector/)
-[The bento4 project](https://github.com/axiomatic-systems/Bento4)
-[JK Imaging Ltd.](https://kodakpixpro.com/about-jk-imaging/)
+- [MP4 Inspector](https://sourceforge.net/projects/mp4-inspector/)
+- [The bento4 project](https://github.com/axiomatic-systems/Bento4)
+- [JK Imaging Ltd.](https://kodakpixpro.com/about-jk-imaging/)
