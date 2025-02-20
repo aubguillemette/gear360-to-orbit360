@@ -3,8 +3,8 @@
 This script allows videos taken with a Samsung Gear 360 to be stiche and edited using the "PIXPRO 360 VR SUITE" program, used for the KODAK ORBIT360 cameras.
 
 Requirements:
-- (ffmpeg)[https://ffmpeg.org/download.html]
-- (mp4edit)[https://www.bento4.com/downloads/]
+- [ffmpeg](https://ffmpeg.org/download.html)
+- [mp4edit](https://www.bento4.com/downloads/)
 
 Usage:
 ```.\gear360-to-orbit360.ps1 -input_file <input_file> [-output_file <output_file>] [-metadata_dir_path <metadata_dir_path>] [-ffmpeg_path <ffmpeg_path>] [-mp4edit_path <mp4edit_path>]```
