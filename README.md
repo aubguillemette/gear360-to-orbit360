@@ -22,7 +22,7 @@ I really like the Gear 360 too, but I wasn't satisfied with the options availabl
 ## How
 The ORBIT360 inserts some metadata in the MP4 files it generates. If this data is absent from the file, the stitching software refuses to open the file.
 
-This script copies the folloing atom keys and their original values from a source ORBIT360 file into the Gear 360 file:
+This script resizes the video to the same resolution as an ORBIT360 file, It then copies the folloing atom keys and their original values from a source ORBIT360 file into the Gear 360 file:
 - ```moov/udta/©fmt```: Contains the string "JK Imaging Ltd."
 - ```moov/udta/©inf```: Contains the string "KODAK PIXPRO ORBIT 360 4K"
 - ```moov/udta/m cm```: Not quite sure what this is used for
