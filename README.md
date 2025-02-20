@@ -1,6 +1,6 @@
 # Samsung Gear 360 to Kodak ORBIT360 format converter
 
-This script allows videos taken with a Samsung Gear 360 to be stiche and edited using the "PIXPRO 360 VR SUITE" program, used for the KODAK ORBIT360 cameras.
+This script allows videos taken with a Samsung Gear 360 to be stiche and edited using the "[PIXPRO 360 VR SUITE](https://kodakpixpro.com/support/downloads/)" program, used for the KODAK ORBIT360 cameras.
 
 Requirements:
 - [ffmpeg](https://ffmpeg.org/download.html)
