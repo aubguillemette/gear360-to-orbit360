@@ -30,6 +30,36 @@ This script resizes the video to the same resolution as an ORBIT360 file, It the
 - ```moov/udta/SNum```: Seems to contain the serial number of the camera on which the source video was taken
 - ```moov/udta/rads```: Not quite sure what it does, but if this key is ommited, the software only shows video from one lens
 
+## macOS
+
+Download the pixpro installer and install it, you will be told it is untrusted, close the warning, open System Settings > Privacy & Security, scroll down to the bottom and you will see a message saying how it stopped the app from opening and a button saying "open anyway". Click it, the installer will throw up some more expired certificate warnings, but keep ignoring them.
+
+It is old software that isn't maintained, so this sort of thing is expected.
+
+**If you have any concerns, then do not install, everything you do here is at your own risk**
+
+Make sure you have the requirements installed, easiest way is through Homebrew, so install that first using the instructions on https://brew.sh/ 
+
+When you have brew installed, open a terminal and use this command to install ffmpeg and mp4edit
+
+```
+brew install ffmpeg bento4
+```
+
+Navigate to the folder you downloaded this repo into and make the shell script executable 
+
+```
+chmod +x gear360-to-orbit360.sh
+```
+
+then to run the script
+
+```
+./gear360-to-orbit360.sh -i input.mp4 -o output.mp4
+```
+
+
+
 ## Thanks
 - [MP4 Inspector](https://sourceforge.net/projects/mp4-inspector/)
 - [The bento4 project](https://github.com/axiomatic-systems/Bento4)
