@@ -38,6 +38,8 @@ if ($metadata_dir_path.EndsWith("\")) {
 	$metadata_dir_path = $metadata_dir_path.TrimEnd("\")
 }
 
-& $ffmpeg_path -i $input_file -s 3840x1920 -c:a copy remuxed.mp4
-& $mp4edit_path --insert moov/udta/:$metadata_dir_path\fmt.udta:0 --insert moov/udta/:$metadata_dir_path\inf.udta:1 --insert moov/udta/:$metadata_dir_path\SNumSham.udta:2 --insert moov/udta/:$metadata_dir_path\mcm.udta:3 --insert moov/udta/:$metadata_dir_path\mvr.udta:4 --insert moov/udta/:$metadata_dir_path\rads.udta remuxed.mp4 $output_file
-Remove-Item remuxed.mp4
+$remuxed_file = "$($input_file.Substring(0, $input_file.LastIndexOf('.')))_remuxed.mp4"
+
+& $ffmpeg_path -i $input_file -s 3840x1920 -c:a copy $remuxed_file
+& $mp4edit_path --insert moov/udta/:$metadata_dir_path\fmt.udta:0 --insert moov/udta/:$metadata_dir_path\inf.udta:1 --insert moov/udta/:$metadata_dir_path\SNumSham.udta:2 --insert moov/udta/:$metadata_dir_path\mcm.udta:3 --insert moov/udta/:$metadata_dir_path\mvr.udta:4 --insert moov/udta/:$metadata_dir_path\rads.udta $remuxed_file $output_file
+Remove-Item $remuxed_file

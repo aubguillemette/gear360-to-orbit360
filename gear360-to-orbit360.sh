@@ -8,8 +8,8 @@ usage() {
 
 # Default values
 metadata_dir_path="metadata"
-ffmpeg_path="$(command -v ffmpeg)"
-mp4edit_path="$(command -v mp4edit)"
+ffmpeg_path="$(which ffmpeg)"
+mp4edit_path="$(which mp4edit)"
 
 # Parse options
 while getopts "i:o:m:f:p:" opt; do
@@ -55,8 +55,10 @@ fi
 # Remove trailing slashes
 metadata_dir_path="${metadata_dir_path%/}"
 
+remuxed_file="${input_file%.*}_remuxed.mp4"
+
 # Do the thing
-"$ffmpeg_path" -i "$input_file" -s 3840x1920 -c:a copy remuxed.mp4
+"$ffmpeg_path" -i "$input_file" -s 3840x1920 -c:a copy "$remuxed_file"
 
 "$mp4edit_path" \
   --insert "moov/udta/:${metadata_dir_path}/fmt.udta:0" \
@@ -65,6 +67,6 @@ metadata_dir_path="${metadata_dir_path%/}"
   --insert "moov/udta/:${metadata_dir_path}/mcm.udta:3" \
   --insert "moov/udta/:${metadata_dir_path}/mvr.udta:4" \
   --insert "moov/udta/:${metadata_dir_path}/rads.udta" \
-  remuxed.mp4 "$output_file"
+  "$remuxed_file" "$output_file"
 
-rm -f remuxed.mp4
+rm -f "$remuxed_file"
